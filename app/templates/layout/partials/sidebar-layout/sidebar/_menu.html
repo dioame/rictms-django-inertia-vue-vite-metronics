@@ -18,7 +18,7 @@
 					<!--begin:Menu item-->
 					<div class="menu-item">
 						<!--begin:Menu link-->
-						<a class="menu-link active" href="#">
+						<a class="menu-link" href="/">
 							<span class="menu-bullet">
 								<span class="bullet bullet-dot"></span>
 							</span>
@@ -30,7 +30,7 @@
 					<!--begin:Menu item-->
 					<div class="menu-item">
 						<!--begin:Menu link-->
-						<a class="menu-link" href="#">
+						<a class="menu-link" href="/about">
 							<span class="menu-bullet">
 								<span class="bullet bullet-dot"></span>
 							</span>
@@ -3203,3 +3203,29 @@
 	<!--end::Menu wrapper-->
 </div>
 <!--end::sidebar menu-->
+
+<script>
+	document.addEventListener("DOMContentLoaded", function() {
+	  // Get all the menu links
+	  const menuLinks = document.querySelectorAll('.menu-link');
+  
+	  // Get the current URL path
+	  const currentPath = window.location.pathname;
+  
+	  // Loop through each menu link
+	  menuLinks.forEach(link => {
+		// Check if the href matches the current path
+		if (link.getAttribute('href') === currentPath) {
+		  // Add the 'active' class to the matching link
+		  link.classList.add('active');
+  
+		  // Add 'show' class to the parent accordion if it exists
+		  const parentItem = link.closest('.menu-accordion');
+		  if (parentItem) {
+			parentItem.classList.add('here', 'show');
+		  }
+		}
+	  });
+	});
+  </script>
+  
