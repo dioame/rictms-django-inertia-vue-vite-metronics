@@ -1,89 +1,45 @@
-# Inertia + Django + Vite + Vue minimal template
 
-A minimal, working template for Inertia + Django + Vite + Vue.
+# DJANGO - VUE3 - VITE - INERTIA 
 
-## Technologies
+An all in one package Template.
 
-1. Inertia - powered by the official [Inertia.js Django Adapter](https://github.com/inertiajs/inertia-django)
-2. Django v4.2
-3. Vite 5 - powered by [Django Vite](https://github.com/MrBin99/django-vite)
-4. Vue 3
-5. TypeScript
-6. [WhiteNoise](https://whitenoise.evans.io/en/stable/index.html) - to serve static files
 
-## How to install & run
 
-1. Download the repo. You can either:
 
-   a. Clone the repo (without the git history):
+## Installation
 
-   ```sh
-   npx degit https://github.com/mujahidfa/inertia-django-vite-vue-minimal
-   ```
+```bash
+  python -m venv .venv
+```
+```bash
+pip install -r requirements.txt
+```
 
-   b. Or, create a repo based on this template via the [GitHub template generator](https://github.com/mujahidfa/inertia-django-vite-vue-minimal/generate).
+```bash
+npm install
+```
 
-2. Install required Python packages.
+```bash
+npm run dev
+```
 
-   ```sh
-   # Create and activate a virtual environment
-   python3 -m venv .venv
-   source .venv/bin/activate
+```bash
+python manage.py migrate
+```
 
-   # Install required Python packages
-   pip install -r requirements.txt
-   ```
+```bash
+python manage.py runserver
+```
+## Production
 
-3. Install required Node.js packages.
+```bash
+npm run build
+```
 
-   ```sh
-   npm install
-   ```
+```bash
+python manage.py collectstatic
+```
 
-4. Run the Vite dev server:
-
-   ```sh
-   npm run dev
-   ```
-
-5. Run Django's default migrations:
-
-   ```sh
-   python manage.py migrate
-   ```
-
-6. Run the Django dev server (in a separate terminal):
-
-   ```sh
-   python manage.py runserver
-   ```
-
-## How to build for production
-
-1. Set `DEBUG=False` in [settings.py](./inertia_django_vite_vue_minimal/settings.py).
-
-   ```py
-   # In settings.py
-   ...
-   DEBUG=False
-   ...
-   ```
-
-2. Build the JS/assets for production:
-
-   ```sh
-   npm run build
-   ```
-
-3. Run `collectstatic`:
-
-   ```sh
-   rm -rf staticfiles/
-   python manage.py collectstatic
-   ```
-
-4. Run the Django server:
-
-   ```sh
-   python manage.py runserver
-   ```
+```bash
+python manage.py runserver
+```
